@@ -11,6 +11,9 @@ Layer. If you don't know what the PAL is, you probably don't need this repo.
 Clone this repo and run: `docker build -t <yourname>/pal .`, this should build
 the required container for using the PAL within Docker.
 
+**Note:** You will need a BBC developer certificate which needs to be placed in
+the root of this repo as `dev.bbc.co.uk.pem`
+
 This repo would go nicely with my
 [vagrant-coreos-docker](https://github.com/sthulb/vagrant-coreos-docker) repo.
 
