@@ -4,3 +4,5 @@
 
 # Because obviously!
 *.pem
+
+chef/*
