@@ -1,7 +1,6 @@
 {
   "run_list": [
     "recipe[docker::networking]",
-    "recipe[docker::pal_runner]",
     "recipe[certificates::add]",
     "recipe[base_packages]",
     "recipe[packages]",
@@ -11,7 +10,6 @@
     "recipe[environment::reith_proxies]",
     "recipe[environment::path]",
     "recipe[environment::term]",
-    "recipe[services]",
     "recipe[cleanup::root]",
     "recipe[cleanup::var]",
     "recipe[cleanup::tmp]"
