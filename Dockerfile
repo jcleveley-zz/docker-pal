@@ -13,4 +13,5 @@ RUN curl https://www.opscode.com/chef/install.sh | bash
 RUN git clone --depth=1 https://github.com/sthulb/chef-cookbooks.git /tmp/chef
 RUN /opt/chef/bin/chef-solo --log_level debug -c /tmp/solo.rb -j /tmp/runlist.json
 
-CMD ["/usr/bin/supervisord"]
+ENTRYPOINT ["/usr/bin/supervisord"]
+CMD ["-c", "/etc/supervisor-news.conf"]
