@@ -1,16 +1,14 @@
 {
   "run_list": [
     "recipe[docker::networking]",
+    "recipe[docker::supervisor]",
     "recipe[certificates::add]",
-    "recipe[base_packages]",
-    "recipe[packages]",
-    "recipe[ruby::install]",
-    "recipe[ruby::gems]",
     "recipe[environment::subversion]",
     "recipe[environment::reith_proxies]",
     "recipe[environment::path]",
     "recipe[environment::term]",
-    "recipe[cleanup::root]",
+    "recipe[base_packages]",
+    "recipe[packages]",
     "recipe[cleanup::var]",
     "recipe[cleanup::tmp]"
   ]
