@@ -12,7 +12,7 @@ Clone this repo and run: `docker build -t <yourname>/pal .`, this should build
 the required container for using the PAL within Docker.
 
 **Note:** You will need a BBC developer certificate which needs to be placed in
-the root of this repo as `dev.bbc.co.uk.pem`
+`certificates` as `dev.bbc.co.uk.pem`
 
 This repo would go nicely with my
 [vagrant-coreos-docker](https://github.com/sthulb/vagrant-coreos-docker) repo.
@@ -20,8 +20,8 @@ This repo would go nicely with my
 
 ## Usage
 
-You can run the resulting image fairly easily with: `docker run -p 22 -p 80 -p
-6081 -t -i <yourname>/pal`
+You can run the resulting image fairly easily with: `docker run -p 8080:80
+-t -i <yourname>/pal`
 
 It's even possible to run this concurrently with itself.
 
