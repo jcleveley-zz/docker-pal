@@ -9,6 +9,7 @@ function extract_payload_arg() {
 MEMBER_HOSTNAME=$(extract_payload_arg "$PAYLOAD", 1)
 MEMBER_GIT_REPO_URL=$(extract_payload_arg "$PAYLOAD", 2)
 MEMBER_GIT_REF=$(extract_payload_arg "$PAYLOAD", 3)
+MEMBER_MASHERY_KEY=$(extract_payload_arg "$PAYLOAD" 4)
 
 if [ "$MEMBER_HOSTNAME" != "$HOSTNAME" ]; then
   exit 0
@@ -34,5 +35,11 @@ npm install
 
 grunt sass:compile:news
 
+cat << EOF > /mnt/hgfs/workspace/configurator/src/main/BBC/News/Config/environments.local.ini
+[sandbox]
+candy.host = http://bbc.api.mashery.com
+candyext.host = https://bbc.api.mashery.com
+candy.params.api_key = $MEMBER_MASHERY_KEY
+EOF
 
 serf event -coalesce=false service "$HOSTNAME httpd restart"
