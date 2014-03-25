@@ -9,7 +9,7 @@ RUN mkdir -p /etc/pki
 
 # Base provisioning
 RUN touch /etc/mtab
-RUN rpm -ivh http://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/5/x86_64/epel-release-5-4.noarch.rpm
+RUN rpm -ivh http://dl.fedoraproject.org/pub/epel/5/x86_64/epel-release-5-4.noarch.rpm
 RUN yum install -y curl git
 RUN yum update -y
 RUN yum reinstall -y glibc-common
@@ -34,4 +34,15 @@ RUN yum install -y --skip-broken bbc-news-pal-sandbox || true
 # Remove Certs
 RUN rm -f /etc/pki/certificate.pem
 
-RUN extaccess pal.docker.simons.computer static.docker.simons.computer:8080 ichef.docker.simons.computer:8080
+# serf
+RUN curl -L https://dl.bintray.com/mitchellh/serf/0.5.0_linux_amd64.zip -o /tmp/serf.zip
+RUN unzip /tmp/serf.zip -d /usr/local/bin
+RUN rm -rf /tmp/serf.zip
+
+ADD scripts/serf_runner /usr/local/bin/serf_runner
+ADD scripts /etc/serf
+RUN chmod +x /etc/serf/router.sh
+RUN chmod +x /etc/serf/**/*.sh
+RUN chmod +x /usr/local/bin/serf_runner
+
+# ENTRYPOINT "serf_runner"
