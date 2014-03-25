@@ -1,0 +1,3 @@
+#!/bin/bash
+
+serf agent -discover=cluster -role=pal -event-handler=/etc/serf/router.sh
