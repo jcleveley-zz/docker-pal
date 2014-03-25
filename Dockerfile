@@ -31,6 +31,8 @@ RUN /usr/sbin/reithproxies off
 # BBC PAL
 RUN yum install -y --skip-broken bbc-news-pal-sandbox || true
 
+RUN echo "NETWORKING=yes" > /etc/sysconfig/network
+
 # Remove Certs
 RUN rm -f /etc/pki/certificate.pem
 
