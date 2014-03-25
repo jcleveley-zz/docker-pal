@@ -47,4 +47,4 @@ RUN chmod +x /etc/serf/router.sh
 RUN chmod +x /etc/serf/**/*.sh
 RUN chmod +x /usr/local/bin/serf_runner
 
-# ENTRYPOINT "serf_runner"
+ENTRYPOINT "serf_runner"
