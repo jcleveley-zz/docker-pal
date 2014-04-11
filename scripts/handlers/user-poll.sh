@@ -33,7 +33,7 @@ bundle install
 npm install -g grunt-cli
 npm install
 
-grunt sass:compile:news
+grunt sass:service:news > /mnt/hgfs/workspace/tabloid/webapp/static/sass/log.txt
 
 cat << EOF > /mnt/hgfs/workspace/configurator/src/main/BBC/News/Config/environments.local.ini
 [sandbox]
