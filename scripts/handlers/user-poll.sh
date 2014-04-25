@@ -39,7 +39,7 @@ cat << EOF > /mnt/hgfs/workspace/configurator/src/main/BBC/News/Config/environme
 [sandbox]
 candy.host = http://bbc.api.mashery.com
 candyext.host = https://bbc.api.mashery.com
-candy.params.api_key = $MEMBER_MASHERY_KEY
+candy.params.api_key = $MASHERY_KEY
 EOF
 
 serf event -coalesce=false service "$HOSTNAME httpd restart"
