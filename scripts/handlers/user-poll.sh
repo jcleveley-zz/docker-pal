@@ -37,8 +37,8 @@ grunt sass:service:news > /mnt/hgfs/workspace/tabloid/webapp/static/sass/log.txt
 
 cat << EOF > /mnt/hgfs/workspace/configurator/src/main/BBC/News/Config/environments.local.ini
 [sandbox]
-candy.host = http://bbc.api.mashery.com
-candyext.host = https://bbc.api.mashery.com
+candy.host =  https://d.bbc.co.uk
+candyext.host = https://d.bbc.co.uk
 candy.params.api_key = $MASHERY_KEY
 EOF
 
